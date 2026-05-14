@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI作品集 | 10年外贸实战 × AI工程化落地</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #e0e0e0; background: #0a0a0a; line-height: 1.7; }
+        a { color: #60a5fa; text-decoration: none; }
+        a:hover { color: #93c5fd; }
+
+        /* Hero */
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%); }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 0.5rem; background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero .tagline { font-size: clamp(1rem, 2.5vw, 1.5rem); color: #94a3b8; margin-bottom: 1.5rem; }
+        .hero .subtitle { font-size: 1.1rem; color: #64748b; max-width: 600px; margin: 0 auto 2rem; }
+        .hero .cta { display: inline-block; padding: 0.75rem 2rem; background: linear-gradient(135deg, #3b82f6, #8b5cf6); color: white; border-radius: 8px; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
+        .hero .cta:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(59,130,246,0.3); color: white; }
+
+        /* Skills */
+        .skills { padding: 4rem 2rem; max-width: 900px; margin: 0 auto; }
+        .skills h2 { text-align: center; font-size: 1.8rem; margin-bottom: 2rem; color: #e2e8f0; }
+        .skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; }
+        .skill-card { background: #111827; border: 1px solid #1e293b; border-radius: 12px; padding: 1.5rem; transition: border-color 0.3s, transform 0.2s; }
+        .skill-card:hover { border-color: #3b82f6; transform: translateY(-3px); }
+        .skill-card .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+        .skill-card h3 { color: #f1f5f9; font-size: 1.1rem; margin-bottom: 0.4rem; }
+        .skill-card p { color: #94a3b8; font-size: 0.9rem; }
+        .skill-card .level { margin-top: 0.8rem; height: 4px; background: #1e293b; border-radius: 2px; overflow: hidden; }
+        .skill-card .level-bar { height: 100%; border-radius: 2px; background: linear-gradient(90deg, #3b82f6, #8b5cf6); }
+
+        /* Projects */
+        .projects { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+        .projects h2 { text-align: center; font-size: 1.8rem; margin-bottom: 2rem; color: #e2e8f0; }
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .project-card { background: #111827; border: 1px solid #1e293b; border-radius: 12px; padding: 1.8rem; transition: border-color 0.3s, transform 0.2s; }
+        .project-card:hover { border-color: #8b5cf6; transform: translateY(-3px); }
+        .project-card .badge { display: inline-block; padding: 0.2rem 0.6rem; background: #1e293b; color: #94a3b8; border-radius: 4px; font-size: 0.75rem; margin-bottom: 0.8rem; }
+        .project-card .badge.highlight { background: linear-gradient(135deg, #3b82f6, #8b5cf6); color: white; }
+        .project-card h3 { color: #f1f5f9; font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .project-card p { color: #94a3b8; font-size: 0.9rem; margin-bottom: 1rem; }
+        .project-card .tech { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .project-card .tech span { padding: 0.15rem 0.5rem; background: #0f172a; color: #64748b; border-radius: 3px; font-size: 0.75rem; }
+
+        /* Cases */
+        .cases { padding: 4rem 2rem; max-width: 800px; margin: 0 auto; }
+        .cases h2 { text-align: center; font-size: 1.8rem; margin-bottom: 2rem; color: #e2e8f0; }
+        .case-item { background: #111827; border: 1px solid #1e293b; border-radius: 12px; padding: 1.8rem; margin-bottom: 1.5rem; }
+        .case-item h3 { color: #f1f5f9; margin-bottom: 0.5rem; }
+        .case-item .case-flow { color: #60a5fa; font-family: 'Courier New', monospace; font-size: 0.85rem; margin: 0.8rem 0; padding: 0.8rem; background: #0a0a0a; border-radius: 6px; }
+        .case-item p { color: #94a3b8; font-size: 0.9rem; }
+
+        /* Footer */
+        footer { text-align: center; padding: 3rem 2rem; color: #475569; font-size: 0.85rem; border-top: 1px solid #1e293b; }
+        footer .links { margin-top: 0.5rem; }
+        footer .links a { margin: 0 0.8rem; }
+
+        @media (max-width: 600px) {
+            .skill-grid, .project-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+    <div>
+        <h1>10年外贸实战 × AI工程化落地</h1>
+        <p class="tagline">专注于用AI工具链解决真实业务问题</p>
+        <p class="subtitle">从自动化到智能化的全栈实践者 —— 不止懂概念，更会动手</p>
+        <a href="#projects" class="cta">查看作品 ↓</a>
+    </div>
+</section>
+
+<!-- Skills -->
+<section class="skills" id="skills">
+    <h2>🛠️ 能力矩阵</h2>
+    <div class="skill-grid">
+        <div class="skill-card">
+            <div class="icon">🤖</div>
+            <h3>AI助手系统架构</h3>
+            <p>OpenClaw全栈搭建：Telegram集成、技能编排、定时任务调度</p>
+            <div class="level"><div class="level-bar" style="width:90%"></div></div>
+        </div>
+        <div class="skill-card">
+            <div class="icon">🔄</div>
+            <h3>自动化工作流</h3>
+            <p>Cron定时任务、多平台数据聚合、新闻推送、RSS监控</p>
+            <div class="level"><div class="level-bar" style="width:85%"></div></div>
+        </div>
+        <div class="skill-card">
+            <div class="icon">🌐</div>
+            <h3>多平台数据采集</h3>
+            <p>Agent Reach多渠道接入、Crawl4AI深度爬虫、反检测策略</p>
+            <div class="level"><div class="level-bar" style="width:80%"></div></div>
+        </div>
+        <div class="skill-card">
+            <div class="icon">🎨</div>
+            <h3>AI内容创作</h3>
+            <p>ModelScope文生图+后处理、网文创作SOP、提示词工程</p>
+            <div class="level"><div class="level-bar" style="width:85%"></div></div>
+        </div>
+        <div class="skill-card">
+            <div class="icon">🏗️</div>
+            <h3>全栈Web部署</h3>
+            <p>Vercel+MongoDB影视站、GitHub Pages、API集成</p>
+            <div class="level"><div class="level-bar" style="width:75%"></div></div>
+        </div>
+        <div class="skill-card">
+            <div class="icon">💼</div>
+            <h3>外贸+AI跨界</h3>
+            <p>10年外贸实战经验，AI赋能业务流程，客户背景调研自动化</p>
+            <div class="level"><div class="level-bar" style="width:95%"></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects -->
+<section class="projects" id="projects">
+    <h2>📂 项目作品</h2>
+    <div class="project-grid">
+        <div class="project-card">
+            <span class="badge highlight">核心项目</span>
+            <h3>🤖 AI智能助手系统</h3>
+            <p>基于OpenClaw搭建的完整AI助手：Telegram Bot集成、15+技能编排、定时新闻推送、多模型调度。日常高频使用，已稳定运行数月。</p>
+            <div class="tech">
+                <span>OpenClaw</span><span>Telegram Bot</span><span>Cron</span><span>Multi-LLM</span>
+            </div>
+        </div>
+        <div class="project-card">
+            <span class="badge highlight">实战项目</span>
+            <h3>🎬 影视聚合站</h3>
+            <p>全栈部署：Vercel前端 + MongoDB数据库，支持在线播放、搜索、分类浏览。从零搭建到上线独立完成。</p>
+            <div class="tech">
+                <span>Vercel</span><span>MongoDB</span><span>Next.js</span><span>API集成</span>
+            </div>
+        </div>
+        <div class="project-card">
+            <span class="badge">AI应用</span>
+            <h3>🔮 奇门遁甲智能排盘</h3>
+            <p>将传统术数数字化：自动起局排盘、财官/婚恋/性格多维度分析、化解方案生成。Windows/Linux跨平台适配。</p>
+            <div class="tech">
+                <span>Bash</span><span>Python</span><span>置闰法</span><span>转盘</span>
+            </div>
+        </div>
+        <div class="project-card">
+            <span class="badge">自动化</span>
+            <h3>📰 每日新闻自动推送</h3>
+            <p>定时抓取多源新闻→AI摘要→Telegram推送。自动监控、故障自愈、超时动态调整。</p>
+            <div class="tech">
+                <span>Cron</span><span>Web Scraping</span><span>LLM摘要</span>
+            </div>
+        </div>
+        <div class="project-card">
+            <span class="badge">内容创作</span>
+            <h3>🎨 AI文生图工作流</h3>
+            <p>ModelScope双模型对比生成+自动后处理去AI感：降对比、降饱和、胶片颗粒、微柔化。真实感增强流程：实体搜索→特征提取→优化prompt→生成。</p>
+            <div class="tech">
+                <span>ModelScope</span><span>Exa搜索</span><span>Pillow</span><span>Prompt工程</span>
+            </div>
+        </div>
+        <div class="project-card">
+            <span class="badge">数据采集</span>
+            <h3>🌐 多平台数据聚合</h3>
+            <p>Agent Reach统一接入Twitter/Reddit/小红书/B站/微博等16个平台，零配置启动，Cookie认证解锁高级功能。</p>
+            <div class="tech">
+                <span>Agent Reach</span><span>mcporter</span><span>yt-dlp</span><span>MCP</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Cases -->
+<section class="cases" id="cases">
+    <h2>📋 实战案例</h2>
+    <div class="case-item">
+        <h3>🔍 AI赋能外贸客户背景调研</h3>
+        <div class="case-flow">目标公司 → Crawl4AI深度爬取 → 多平台数据聚合 → AI摘要分析 → 结构化报告</div>
+        <p>传统外贸做客户背调需要2-3小时人工搜索，用AI工具链自动化后缩短至15分钟，覆盖LinkedIn、新闻、社交媒体等多维度信息。</p>
+    </div>
+    <div class="case-item">
+        <h3>✍️ AI辅助网文创作全流程</h3>
+        <div class="case-flow">素材收集 → 大纲生成 → 逐章创作 → 审核/校对 → 成品输出</div>
+        <p>建立标准化SOP：提示词模板库+AI批量生成+人工审核校准。单章产出效率提升3倍，同时保持人设一致和伏笔呼应。</p>
+    </div>
+    <div class="case-item">
+        <h3>🏠 智能家居+风水化解实践</h3>
+        <div class="case-flow">奇门起局 → 宫位分析 → 化气阵方案 → 物品布局调整</div>
+        <p>将AI排盘结果落地到实际空间：猫食盆位置（巽宫虎形物）、水盆（辰龙位）、绿萝（乙合庚），理论与生活场景无缝对接。</p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>「10年外贸实战 × AI工程化落地」— 不止会概念，更会动手</p>
+    <div class="links">
+        <a href="https://github.com/xcya01" target="_blank">GitHub</a>
+        <a href="mailto:contact@example.com">联系我</a>
+    </div>
+</footer>
+
+</body>
+</html>
