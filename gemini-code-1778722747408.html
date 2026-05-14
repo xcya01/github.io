@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI作品集 | 10年外贸实战 × AI工程化落地</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* 现代科技暗黑主题配色 */
+            --bg-main: #09090b;
+            --bg-card: rgba(24, 24, 27, 0.6);
+            --bg-card-hover: rgba(39, 39, 42, 0.8);
+            --border-light: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(96, 165, 250, 0.4);
+            
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-cyan: #06b6d4;
+            
+            --gradient-primary: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            --gradient-text: linear-gradient(to right, #60a5fa, #a855f7, #f472b6);
+            
+            --shadow-glow: 0 0 40px -10px rgba(59, 130, 246, 0.15);
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --radius-sm: 6px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
+
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif; 
+            color: var(--text-primary); 
+            background-color: var(--bg-main); 
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.04) 0%, transparent 50%);
+        }
+
+        a { color: #60a5fa; text-decoration: none; transition: all 0.2s ease; }
+        a:hover { color: #93c5fd; text-shadow: 0 0 8px rgba(147, 197, 253, 0.4); }
+
+        /* 通用动画 */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero, .skills, .projects, .cases {
+            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Hero 区块 */
+        .hero { 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            padding: 2rem; 
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+CjxwYXRoIGQ9Ik0wIDBoNDB2NDBIMHoiIGZpbGw9Im5vbmUiLz4KPHBhdGggZD0iTTAgMGgxdjFIMHptMTAgMGgxdjFIMHptMTAgMGgxdjFIMHptMTAgMGgxdjFIMHoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiLz4KPC9zdmc+') repeat;
+            z-index: -1;
+            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+        }
+        .hero h1 { 
+            font-size: clamp(2.5rem, 6vw, 4.5rem); 
+            font-weight: 800; 
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem; 
+            background: var(--gradient-text); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            background-clip: text; 
+            line-height: 1.2;
+        }
+        .hero .tagline { 
+            font-size: clamp(1.2rem, 3vw, 1.8rem); 
+            color: var(--text-primary); 
+            font-weight: 500;
+            margin-bottom: 1rem; 
+        }
+        .hero .subtitle { 
+            font-size: 1.1rem; 
+            color: var(--text-secondary); 
+            max-width: 650px; 
+            margin: 0 auto 3rem; 
+            font-weight: 300;
+        }
+        .hero .cta { 
+            display: inline-block; 
+            padding: 0.8rem 2.5rem; 
+            background: var(--text-primary); 
+            color: var(--bg-main); 
+            border-radius: 9999px; 
+            font-weight: 600; 
+            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); 
+        }
+        .hero .cta:hover { 
+            transform: translateY(-3px); 
+            background: #ffffff;
+            box-shadow: 0 10px 25px -5px rgba(255,255,255,0.2); 
+            color: var(--bg-main); 
+            text-shadow: none;
+        }
+
+        /* 章节通用标题 */
+        section { scroll-margin-top: 4rem; }
+        h2 { 
+            text-align: center; 
+            font-size: 2.2rem; 
+            font-weight: 700;
+            margin-bottom: 3rem; 
+            color: var(--text-primary); 
+            letter-spacing: -0.02em;
+        }
+
+        /* 技能矩阵 */
+        .skills { padding: 6rem 2rem; max-width: 1100px; margin: 0 auto; }
+        .skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .skill-card { 
+            background: var(--bg-card); 
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-light); 
+            border-radius: var(--radius-lg); 
+            padding: 2rem; 
+            transition: all 0.3s ease; 
+        }
+        .skill-card:hover { 
+            border-color: var(--border-hover); 
+            transform: translateY(-5px); 
+            background: var(--bg-card-hover);
+            box-shadow: var(--shadow-glow);
+        }
+        .skill-card .icon { 
+            font-size: 2rem; 
+            margin-bottom: 1.2rem; 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px; height: 50px;
+            background: rgba(255,255,255,0.05);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .skill-card h3 { color: var(--text-primary); font-size: 1.2rem; margin-bottom: 0.8rem; font-weight: 600; }
+        .skill-card p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; min-height: 44px;}
+        .skill-card .level { 
+            height: 3px; 
+            background: rgba(255,255,255,0.1); 
+            border-radius: 99px; 
+            overflow: hidden; 
+        }
+        .skill-card .level-bar { 
+            height: 100%; 
+            border-radius: 99px; 
+            background: var(--gradient-primary); 
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+
+        /* 项目作品 */
+        .projects { padding: 4rem 2rem 6rem; max-width: 1200px; margin: 0 auto; }
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .project-card { 
+            background: var(--bg-card); 
+            border: 1px solid var(--border-light); 
+            border-radius: var(--radius-lg); 
+            padding: 2.2rem; 
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card:hover { 
+            border-color: rgba(139, 92, 246, 0.4); 
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 40px -10px rgba(139, 92, 246, 0.15);
+        }
+        .project-card .badge { 
+            display: align-self;
+            align-self: flex-start;
+            padding: 0.3rem 0.8rem; 
+            background: rgba(255,255,255,0.05); 
+            color: var(--text-secondary); 
+            border-radius: 99px; 
+            font-size: 0.75rem; 
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.2rem; 
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .project-card .badge.highlight { 
+            background: rgba(59, 130, 246, 0.1); 
+            color: #60a5fa; 
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+        .project-card h3 { color: var(--text-primary); font-size: 1.3rem; margin-bottom: 1rem; font-weight: 600; }
+        .project-card p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 2rem; flex-grow: 1; }
+        .project-card .tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto; }
+        .project-card .tech span { 
+            padding: 0.25rem 0.75rem; 
+            background: rgba(0,0,0,0.5); 
+            color: var(--text-secondary); 
+            border-radius: var(--radius-sm); 
+            font-size: 0.8rem; 
+            font-family: 'Fira Code', monospace;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* 实战案例 */
+        .cases { padding: 4rem 2rem 8rem; max-width: 900px; margin: 0 auto; }
+        .case-item { 
+            background: transparent; 
+            border-left: 2px solid var(--border-light);
+            padding: 0 0 3rem 2rem; 
+            position: relative;
+        }
+        .case-item:last-child { padding-bottom: 0; border-left-color: transparent; }
+        .case-item::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 0;
+            width: 12px; height: 12px;
+            background: var(--bg-main);
+            border: 2px solid var(--accent-blue);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+        .case-item h3 { color: var(--text-primary); font-size: 1.4rem; margin-bottom: 1rem; font-weight: 600; line-height: 1; }
+        .case-item .case-flow { 
+            color: #38bdf8; 
+            font-family: 'Fira Code', monospace; 
+            font-size: 0.9rem; 
+            margin: 1.2rem 0; 
+            padding: 1rem 1.2rem; 
+            background: rgba(15, 23, 42, 0.5); 
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            border-radius: var(--radius-md); 
+            line-height: 1.8;
+        }
+        .case-item p { color: var(--text-secondary); font-size: 1rem; }
+
+        /* 页脚 */
+        footer { 
+            text-align: center; 
+            padding: 4rem 2rem; 
+            color: var(--text-muted); 
+            font-size: 0.9rem; 
+            border-top: 1px solid var(--border-light); 
+            background: #000000;
+        }
+        footer .links { margin-top: 1.5rem; display: flex; justify-content: center; gap: 2rem; }
+        footer .links a { 
+            color: var(--text-secondary); 
+            font-weight: 500;
+            position: relative;
+        }
+        footer .links a::after {
+            content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 1px;
+            bottom: -4px; left: 0; background-color: var(--text-secondary);
+            transform-origin: bottom right; transition: transform 0.25s ease-out;
+        }
+        footer .links a:hover::after {
+            transform: scaleX(1); transform-origin: bottom left;
+        }
+        footer .links a:hover { color: var(--text-primary); text-shadow: none; }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .hero { padding: 1rem; }
+            .skill-grid, .project-grid { grid-template-columns: 1fr; }
+            .case-item { padding: 0 0 2rem 1.5rem; }
+            h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <div>
+        <h1>10年外贸实战 × AI工程化落地</h1>
+        <p class="tagline">专注于用AI工具链解决真实业务问题</p>
+        <p class="subtitle">从自动化到智能化的全栈实践者 —— 不止懂概念，更会动手</p>
+        <a href="#projects" class="cta">查看作品 ↓</a>
+    </div>
+</section>
+
+<section class="skills" id="skills">
+    <h2>🛠️ 能力矩阵</h2>
+    <div class="skill-grid">
+        <div class="skill-card">
+            <div class="icon">🤖</div>
+            <h3>AI助手系统架构</h3>
+            <p>OpenClaw全栈搭建：Telegram集成、技能编排、定时任务调度</p>
+            <div class="level"><div class="level-bar" style="width:90%"></div></div>
+        </div>
+        <div class="skill-card">
+            <div class="icon">🔄</div>
+            <h3>自动化工作流</h3>
+            <p>Cron定时任务、多平台数据聚合、新闻推送、RSS监控</p>
+            <div class="level"><div class="level-bar" style="width:85%"></div></div>
+        </div>
+        <div class="skill-card">
+            <div class="icon">🌐</div>
+            <h3>多平台数据采集</h3>
+            <p>Agent Reach多渠道接入、Crawl4AI深度爬虫、反检测策略</p>
+            <div class="level"><div class="level-bar" style="width:80%"></div></div>
+        </div>
+        <div class="skill-card">
+            <div class="icon">🎨</div>
+            <h3>AI内容创作</h3>
+            <p>ModelScope文生图+后处理、网文创作SOP、提示词工程</p>
+            <div class="level"><div class="level-bar" style="width:85%"></div></div>
+        </div>
+        <div class="skill-card">
+            <div class="icon">🏗️</div>
+            <h3>全栈Web部署</h3>
+            <p>Vercel+MongoDB影视站、GitHub Pages、API集成</p>
+            <div class="level"><div class="level-bar" style="width:75%"></div></div>
+        </div>
+        <div class="skill-card">
+            <div class="icon">💼</div>
+            <h3>外贸+AI跨界</h3>
+            <p>10年外贸实战经验，AI赋能业务流程，客户背景调研自动化</p>
+            <div class="level"><div class="level-bar" style="width:95%"></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="projects" id="projects">
+    <h2>📂 项目作品</h2>
+    <div class="project-grid">
+        <div class="project-card">
+            <span class="badge highlight">核心项目</span>
+            <h3>🤖 AI智能助手系统</h3>
+            <p>基于OpenClaw搭建的完整AI助手：Telegram Bot集成、15+技能编排、定时新闻推送、多模型调度。日常高频使用，已稳定运行数月。</p>
+            <div class="tech">
+                <span>OpenClaw</span><span>Telegram Bot</span><span>Cron</span><span>Multi-LLM</span>
+            </div>
+        </div>
+        <div class="project-card">
+            <span class="badge highlight">实战项目</span>
+            <h3>🎬 影视聚合站</h3>
+            <p>全栈部署：Vercel前端 + MongoDB数据库，支持在线播放、搜索、分类浏览。从零搭建到上线独立完成。</p>
+            <div class="tech">
+                <span>Vercel</span><span>MongoDB</span><span>Next.js</span><span>API集成</span>
+            </div>
+        </div>
+        <div class="project-card">
+            <span class="badge">AI应用</span>
+            <h3>🔮 奇门遁甲智能排盘</h3>
+            <p>将传统术数数字化：自动起局排盘、财官/婚恋/性格多维度分析、化解方案生成。Windows/Linux跨平台适配。</p>
+            <div class="tech">
+                <span>Bash</span><span>Python</span><span>置闰法</span><span>转盘</span>
+            </div>
+        </div>
+        <div class="project-card">
+            <span class="badge">自动化</span>
+            <h3>📰 每日新闻自动推送</h3>
+            <p>定时抓取多源新闻→AI摘要→Telegram推送。自动监控、故障自愈、超时动态调整。</p>
+            <div class="tech">
+                <span>Cron</span><span>Web Scraping</span><span>LLM摘要</span>
+            </div>
+        </div>
+        <div class="project-card">
+            <span class="badge">内容创作</span>
+            <h3>🎨 AI文生图工作流</h3>
+            <p>ModelScope双模型对比生成+自动后处理去AI感：降对比、降饱和、胶片颗粒、微柔化。真实感增强流程：实体搜索→特征提取→优化prompt→生成。</p>
+            <div class="tech">
+                <span>ModelScope</span><span>Exa搜索</span><span>Pillow</span><span>Prompt工程</span>
+            </div>
+        </div>
+        <div class="project-card">
+            <span class="badge">数据采集</span>
+            <h3>🌐 多平台数据聚合</h3>
+            <p>Agent Reach统一接入Twitter/Reddit/小红书/B站/微博等16个平台，零配置启动，Cookie认证解锁高级功能。</p>
+            <div class="tech">
+                <span>Agent Reach</span><span>mcporter</span><span>yt-dlp</span><span>MCP</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cases" id="cases">
+    <h2>📋 实战案例</h2>
+    <div class="case-item">
+        <h3>🔍 AI赋能外贸客户背景调研</h3>
+        <div class="case-flow">目标公司 → Crawl4AI深度爬取 → 多平台数据聚合 → AI摘要分析 → 结构化报告</div>
+        <p>传统外贸做客户背调需要2-3小时人工搜索，用AI工具链自动化后缩短至15分钟，覆盖LinkedIn、新闻、社交媒体等多维度信息。</p>
+    </div>
+    <div class="case-item">
+        <h3>✍️ AI辅助网文创作全流程</h3>
+        <div class="case-flow">素材收集 → 大纲生成 → 逐章创作 → 审核/校对 → 成品输出</div>
+        <p>建立标准化SOP：提示词模板库+AI批量生成+人工审核校准。单章产出效率提升3倍，同时保持人设一致和伏笔呼应。</p>
+    </div>
+    <div class="case-item">
+        <h3>🏠 智能家居+风水化解实践</h3>
+        <div class="case-flow">奇门起局 → 宫位分析 → 化气阵方案 → 物品布局调整</div>
+        <p>将AI排盘结果落地到实际空间：猫食盆位置（巽宫虎形物）、水盆（辰龙位）、绿萝（乙合庚），理论与生活场景无缝对接。</p>
+    </div>
+</section>
+
+<footer>
+    <p>「10年外贸实战 × AI工程化落地」— 不止会概念，更会动手</p>
+    <div class="links">
+        <a href="https://github.com/xcya01" target="_blank">GitHub</a>
+        <a href="mailto:contact@example.com">联系我</a>
+    </div>
+</footer>
+
+</body>
+</html>
