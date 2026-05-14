@@ -84,6 +84,20 @@
             section { padding: 4rem 5%; }
             h2 { font-size: 2rem; }
         }
+        /* 强制修复图片底部留白 */
+.gallery-item img, 
+.project-card img, 
+.hero-image img {
+    display: block !important; /* 关键：强制变块级元素 */
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+/* 确保容器也没内边距 */
+.gallery-item, .project-card {
+    padding: 0; 
+}
     </style>
 </head>
 <body>
@@ -169,6 +183,7 @@
             </div>
         </div>
         <div class="project-card">
+            <img src="assets/Daily News.png" alt="每日新闻推送截图" onerror="this.style.display='none'" />
             <div class="content">
                 <span class="badge">自动化</span>
                 <h3>每日新闻自动推送</h3>
