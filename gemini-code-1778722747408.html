@@ -6,62 +6,56 @@
     <title>AI作品集 | 10年外贸实战 × AI工程化落地</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* 现代科技暗黑主题配色 */
-            --bg-main: #09090b;
-            --bg-card: rgba(24, 24, 27, 0.6);
-            --bg-card-hover: rgba(39, 39, 42, 0.8);
-            --border-light: rgba(255, 255, 255, 0.08);
-            --border-hover: rgba(96, 165, 250, 0.4);
+            /* 现代商业亮色主题 */
+            --bg-body: #f8fafc;      /* 极浅的蓝灰背景 */
+            --bg-card: #ffffff;      /* 纯白卡片 */
             
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --text-muted: #64748b;
+            --text-main: #0f172a;    /* 接近黑色的深灰，用于大标题 */
+            --text-normal: #334155;  /* 正文灰 */
+            --text-muted: #64748b;   /* 辅助说明灰 */
             
-            --accent-blue: #3b82f6;
-            --accent-purple: #8b5cf6;
-            --accent-cyan: #06b6d4;
+            --primary: #2563eb;      /* 商业蓝 */
+            --primary-hover: #1d4ed8;
+            --primary-light: #eff6ff;
             
-            --gradient-primary: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-            --gradient-text: linear-gradient(to right, #60a5fa, #a855f7, #f472b6);
+            --border: #e2e8f0;       /* 柔和的边框线 */
             
-            --shadow-glow: 0 0 40px -10px rgba(59, 130, 246, 0.15);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+            
             --radius-lg: 16px;
             --radius-md: 12px;
-            --radius-sm: 6px;
+            --radius-sm: 8px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         html { scroll-behavior: smooth; }
 
         body { 
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif; 
-            color: var(--text-primary); 
-            background-color: var(--bg-main); 
-            line-height: 1.6;
+            color: var(--text-normal); 
+            background-color: var(--bg-body); 
+            line-height: 1.7;
             -webkit-font-smoothing: antialiased;
-            background-image: 
-                radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.04) 0%, transparent 50%),
-                radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.04) 0%, transparent 50%);
         }
 
-        a { color: #60a5fa; text-decoration: none; transition: all 0.2s ease; }
-        a:hover { color: #93c5fd; text-shadow: 0 0 8px rgba(147, 197, 253, 0.4); }
+        a { color: var(--primary); text-decoration: none; transition: all 0.2s; }
+        a:hover { color: var(--primary-hover); }
 
-        /* 通用动画 */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
+        /* 优雅的入场动画 */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
         .hero, .skills, .projects, .cases {
-            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        /* Hero 区块 */
+        /* Hero 区块 - 渐变网格背景 */
         .hero { 
             min-height: 100vh; 
             display: flex; 
@@ -69,226 +63,201 @@
             justify-content: center; 
             text-align: center; 
             padding: 2rem; 
+            background: 
+                radial-gradient(circle at top right, #e0e7ff 0%, transparent 40%),
+                radial-gradient(circle at bottom left, #dbeafe 0%, transparent 40%),
+                var(--bg-body);
             position: relative;
         }
-        .hero::before {
+        .hero::after {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+CjxwYXRoIGQ9Ik0wIDBoNDB2NDBIMHoiIGZpbGw9Im5vbmUiLz4KPHBhdGggZD0iTTAgMGgxdjFIMHptMTAgMGgxdjFIMHptMTAgMGgxdjFIMHptMTAgMGgxdjFIMHoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiLz4KPC9zdmc+') repeat;
-            z-index: -1;
-            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+            inset: 0;
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 32px 32px;
+            opacity: 0.3;
+            z-index: 0;
         }
+        .hero div { position: relative; z-index: 1; }
         .hero h1 { 
-            font-size: clamp(2.5rem, 6vw, 4.5rem); 
+            font-size: clamp(2.2rem, 5vw, 4rem); 
             font-weight: 800; 
-            letter-spacing: -0.03em;
-            margin-bottom: 1rem; 
-            background: var(--gradient-text); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-            background-clip: text; 
-            line-height: 1.2;
+            letter-spacing: -0.04em;
+            color: var(--text-main);
+            margin-bottom: 1.2rem; 
+            line-height: 1.15;
         }
         .hero .tagline { 
-            font-size: clamp(1.2rem, 3vw, 1.8rem); 
-            color: var(--text-primary); 
-            font-weight: 500;
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem); 
+            color: var(--primary); 
+            font-weight: 600;
             margin-bottom: 1rem; 
         }
         .hero .subtitle { 
-            font-size: 1.1rem; 
-            color: var(--text-secondary); 
-            max-width: 650px; 
-            margin: 0 auto 3rem; 
-            font-weight: 300;
+            font-size: 1.15rem; 
+            color: var(--text-muted); 
+            max-width: 600px; 
+            margin: 0 auto 2.5rem; 
         }
         .hero .cta { 
             display: inline-block; 
-            padding: 0.8rem 2.5rem; 
-            background: var(--text-primary); 
-            color: var(--bg-main); 
-            border-radius: 9999px; 
+            padding: 0.85rem 2.5rem; 
+            background-color: var(--text-main); 
+            color: #ffffff; 
+            border-radius: 99px; 
             font-weight: 600; 
-            font-size: 1.1rem;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); 
+            font-size: 1.05rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease; 
         }
         .hero .cta:hover { 
             transform: translateY(-3px); 
-            background: #ffffff;
-            box-shadow: 0 10px 25px -5px rgba(255,255,255,0.2); 
-            color: var(--bg-main); 
-            text-shadow: none;
+            background-color: var(--primary); 
+            box-shadow: 0 10px 20px -10px var(--primary);
         }
 
         /* 章节通用标题 */
-        section { scroll-margin-top: 4rem; }
+        section { scroll-margin-top: 5rem; }
         h2 { 
             text-align: center; 
-            font-size: 2.2rem; 
-            font-weight: 700;
+            font-size: 2rem; 
+            font-weight: 800;
             margin-bottom: 3rem; 
-            color: var(--text-primary); 
+            color: var(--text-main); 
             letter-spacing: -0.02em;
         }
 
         /* 技能矩阵 */
-        .skills { padding: 6rem 2rem; max-width: 1100px; margin: 0 auto; }
+        .skills { padding: 5rem 2rem; max-width: 1000px; margin: 0 auto; }
         .skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
         .skill-card { 
             background: var(--bg-card); 
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-light); 
+            border: 1px solid var(--border); 
             border-radius: var(--radius-lg); 
             padding: 2rem; 
+            box-shadow: var(--shadow-sm);
             transition: all 0.3s ease; 
         }
         .skill-card:hover { 
-            border-color: var(--border-hover); 
-            transform: translateY(-5px); 
-            background: var(--bg-card-hover);
-            box-shadow: var(--shadow-glow);
+            transform: translateY(-4px); 
+            box-shadow: var(--shadow-hover);
+            border-color: #bfdbfe;
         }
         .skill-card .icon { 
             font-size: 2rem; 
-            margin-bottom: 1.2rem; 
+            margin-bottom: 1rem; 
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 50px; height: 50px;
-            background: rgba(255,255,255,0.05);
+            width: 56px; height: 56px;
+            background: var(--primary-light);
             border-radius: var(--radius-md);
-            border: 1px solid rgba(255,255,255,0.05);
         }
-        .skill-card h3 { color: var(--text-primary); font-size: 1.2rem; margin-bottom: 0.8rem; font-weight: 600; }
-        .skill-card p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; min-height: 44px;}
+        .skill-card h3 { color: var(--text-main); font-size: 1.15rem; margin-bottom: 0.6rem; font-weight: 700; }
+        .skill-card p { color: var(--text-normal); font-size: 0.95rem; margin-bottom: 1.5rem; min-height: 48px; }
         .skill-card .level { 
-            height: 3px; 
-            background: rgba(255,255,255,0.1); 
+            height: 6px; 
+            background: #f1f5f9; 
             border-radius: 99px; 
             overflow: hidden; 
         }
         .skill-card .level-bar { 
             height: 100%; 
             border-radius: 99px; 
-            background: var(--gradient-primary); 
-            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+            background: var(--primary); 
         }
 
         /* 项目作品 */
-        .projects { padding: 4rem 2rem 6rem; max-width: 1200px; margin: 0 auto; }
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .projects { padding: 4rem 2rem 5rem; max-width: 1100px; margin: 0 auto; }
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.8rem; }
         .project-card { 
             background: var(--bg-card); 
-            border: 1px solid var(--border-light); 
+            border: 1px solid var(--border); 
             border-radius: var(--radius-lg); 
-            padding: 2.2rem; 
+            padding: 2rem; 
+            box-shadow: var(--shadow-sm);
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
         }
         .project-card:hover { 
-            border-color: rgba(139, 92, 246, 0.4); 
-            transform: translateY(-5px); 
-            box-shadow: 0 10px 40px -10px rgba(139, 92, 246, 0.15);
+            transform: translateY(-4px); 
+            box-shadow: var(--shadow-hover);
+            border-color: #bfdbfe;
         }
         .project-card .badge { 
-            display: align-self;
             align-self: flex-start;
             padding: 0.3rem 0.8rem; 
-            background: rgba(255,255,255,0.05); 
-            color: var(--text-secondary); 
+            background: #f1f5f9; 
+            color: var(--text-muted); 
             border-radius: 99px; 
             font-size: 0.75rem; 
             font-weight: 600;
-            letter-spacing: 0.05em;
             margin-bottom: 1.2rem; 
-            border: 1px solid rgba(255,255,255,0.05);
         }
         .project-card .badge.highlight { 
-            background: rgba(59, 130, 246, 0.1); 
-            color: #60a5fa; 
-            border-color: rgba(59, 130, 246, 0.2);
+            background: var(--primary-light); 
+            color: var(--primary); 
         }
-        .project-card h3 { color: var(--text-primary); font-size: 1.3rem; margin-bottom: 1rem; font-weight: 600; }
-        .project-card p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 2rem; flex-grow: 1; }
+        .project-card h3 { color: var(--text-main); font-size: 1.25rem; margin-bottom: 0.8rem; font-weight: 700; }
+        .project-card p { color: var(--text-normal); font-size: 0.95rem; margin-bottom: 2rem; flex-grow: 1; }
         .project-card .tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto; }
         .project-card .tech span { 
-            padding: 0.25rem 0.75rem; 
-            background: rgba(0,0,0,0.5); 
-            color: var(--text-secondary); 
+            padding: 0.3rem 0.6rem; 
+            background: #f8fafc; 
+            color: var(--text-muted); 
+            border: 1px solid var(--border);
             border-radius: var(--radius-sm); 
             font-size: 0.8rem; 
-            font-family: 'Fira Code', monospace;
-            border: 1px solid rgba(255,255,255,0.05);
+            font-weight: 500;
         }
 
         /* 实战案例 */
-        .cases { padding: 4rem 2rem 8rem; max-width: 900px; margin: 0 auto; }
+        .cases { padding: 4rem 2rem 6rem; max-width: 850px; margin: 0 auto; }
         .case-item { 
-            background: transparent; 
-            border-left: 2px solid var(--border-light);
-            padding: 0 0 3rem 2rem; 
-            position: relative;
+            background: var(--bg-card); 
+            border: 1px solid var(--border); 
+            border-radius: var(--radius-lg); 
+            padding: 2.5rem; 
+            margin-bottom: 2rem; 
+            box-shadow: var(--shadow-sm);
         }
-        .case-item:last-child { padding-bottom: 0; border-left-color: transparent; }
-        .case-item::before {
-            content: '';
-            position: absolute;
-            left: -7px;
-            top: 0;
-            width: 12px; height: 12px;
-            background: var(--bg-main);
-            border: 2px solid var(--accent-blue);
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
-        }
-        .case-item h3 { color: var(--text-primary); font-size: 1.4rem; margin-bottom: 1rem; font-weight: 600; line-height: 1; }
+        .case-item h3 { color: var(--text-main); font-size: 1.3rem; margin-bottom: 1rem; font-weight: 700; }
         .case-item .case-flow { 
-            color: #38bdf8; 
-            font-family: 'Fira Code', monospace; 
+            color: var(--primary); 
             font-size: 0.9rem; 
+            font-weight: 600;
             margin: 1.2rem 0; 
             padding: 1rem 1.2rem; 
-            background: rgba(15, 23, 42, 0.5); 
-            border: 1px solid rgba(56, 189, 248, 0.1);
+            background: var(--primary-light); 
             border-radius: var(--radius-md); 
-            line-height: 1.8;
+            display: inline-block;
+            width: 100%;
         }
-        .case-item p { color: var(--text-secondary); font-size: 1rem; }
+        .case-item p { color: var(--text-normal); font-size: 1rem; line-height: 1.8; }
 
         /* 页脚 */
         footer { 
             text-align: center; 
             padding: 4rem 2rem; 
+            background: var(--bg-card);
             color: var(--text-muted); 
-            font-size: 0.9rem; 
-            border-top: 1px solid var(--border-light); 
-            background: #000000;
+            font-size: 0.95rem; 
+            border-top: 1px solid var(--border); 
         }
-        footer .links { margin-top: 1.5rem; display: flex; justify-content: center; gap: 2rem; }
+        footer .links { margin-top: 1rem; display: flex; justify-content: center; gap: 1.5rem; }
         footer .links a { 
-            color: var(--text-secondary); 
-            font-weight: 500;
-            position: relative;
+            color: var(--text-normal); 
+            font-weight: 600;
         }
-        footer .links a::after {
-            content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 1px;
-            bottom: -4px; left: 0; background-color: var(--text-secondary);
-            transform-origin: bottom right; transition: transform 0.25s ease-out;
-        }
-        footer .links a:hover::after {
-            transform: scaleX(1); transform-origin: bottom left;
-        }
-        footer .links a:hover { color: var(--text-primary); text-shadow: none; }
+        footer .links a:hover { color: var(--primary); }
 
-        /* 响应式调整 */
+        /* 响应式适配 */
         @media (max-width: 768px) {
             .hero { padding: 1rem; }
             .skill-grid, .project-grid { grid-template-columns: 1fr; }
-            .case-item { padding: 0 0 2rem 1.5rem; }
-            h2 { font-size: 1.8rem; }
+            .case-item { padding: 1.5rem; }
+            h2 { font-size: 1.7rem; }
         }
     </style>
 </head>
