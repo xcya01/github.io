@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1a1a1a;
+            --primary-color: #1e293b; /* 打破纯黑，使用深空灰 */
             --accent-color: #c5a059; /* 高级金/铜色点缀 */
             --text-main: #2d3436;
             --text-sub: #636e72;
@@ -50,13 +50,56 @@
             z-index: 0;
             user-select: none;
         }
-        .hero-content { position: relative; z-index: 1; max-width: 800px; }
+        .hero-content { position: relative; z-index: 1; max-width: 850px; }
+        
+        /* 标题基础样式 */
         .hero h1 { 
-            font-size: clamp(2.5rem, 6vw, 4.5rem); 
-            line-height: 1.1; 
+            font-size: clamp(2.5rem, 5.5vw, 4.2rem); 
+            line-height: 1.2; 
             margin-bottom: 1.5rem; 
             letter-spacing: -1px;
+            color: var(--primary-color);
+            text-shadow: 0 8px 20px rgba(0,0,0,0.04); /* 字体特效：立体空间感 */
         }
+
+        /* 字体特效：流光渐变金 "10" */
+        .highlight-10 {
+            font-size: 1.25em; /* 重点放大 */
+            font-weight: 900;
+            background: linear-gradient(135deg, #c5a059 0%, #f3e5ab 50%, #c5a059 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 4s linear infinite; /* 动态流光特效 */
+            display: inline-block;
+            filter: drop-shadow(0 4px 12px rgba(197, 160, 89, 0.3)); /* 外发光特效 */
+            transform: translateY(-2px);
+        }
+
+        /* 字体特效：科技蓝紫 "AI" */
+        .highlight-ai {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            font-family: 'Inter', sans-serif; /* AI用无衬线体显得更现代 */
+            letter-spacing: -2px;
+        }
+
+        /* 弱化乘号 */
+        .hero .multiply {
+            color: #cbd5e1;
+            font-weight: 300;
+            font-family: 'Inter', sans-serif;
+            margin: 0 0.1em;
+            font-size: 0.8em;
+        }
+
+        /* 流光动画关键帧 */
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
         .hero .tagline {
             font-size: 1.5rem;
             color: var(--accent-color);
@@ -78,7 +121,7 @@
             color: #fff;
             font-weight: 600;
             letter-spacing: 1px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 30px rgba(30, 41, 59, 0.2);
         }
         .hero .cta:hover { transform: translateY(-5px); box-shadow: var(--shadow-deep); }
 
@@ -89,6 +132,7 @@
             margin-bottom: 4rem; 
             position: relative;
             display: inline-block;
+            color: var(--primary-color);
         }
         h2::after {
             content: "";
@@ -112,12 +156,12 @@
             transition: var(--transition);
             border: 1px solid rgba(0,0,0,0.02);
         }
-        .skill-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-deep); }
+        .skill-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-deep); border-color: rgba(197, 160, 89, 0.2); }
         .skill-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-color); }
         .skill-card p { font-size: 0.95rem; color: var(--text-sub); margin-bottom: 2rem; min-height: 3em; }
         .skill-card .level {
             height: 2px;
-            background: #eee;
+            background: #f1f5f9;
             position: relative;
         }
         .skill-card .level-bar {
@@ -144,7 +188,6 @@
             border-bottom: 2px solid transparent;
         }
         .project-card:hover { border-bottom-color: var(--accent-color); transform: translateY(-5px); box-shadow: var(--shadow-deep); }
-        /* 创造不规则视觉 */
         .project-card:nth-child(1), .project-card:nth-child(2) { grid-column: span 3; }
         
         .project-card .badge {
@@ -155,19 +198,19 @@
             margin-bottom: 1rem;
             font-weight: 600;
         }
-        .project-card h3 { font-size: 1.4rem; margin-bottom: 1rem; }
+        .project-card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--primary-color); }
         .project-card p { font-size: 0.9rem; color: var(--text-sub); flex-grow: 1; margin-bottom: 2rem; }
         .project-card .tech { display: flex; flex-wrap: wrap; gap: 0.5rem; }
         .project-card .tech span {
             font-size: 0.75rem;
-            background: #f8f8f8;
+            background: #f8fafc;
             padding: 4px 10px;
-            color: #888;
+            color: #64748b;
             border-radius: 2px;
         }
 
         /* --- Case Studies --- */
-        .cases { background: #fdfdfd; }
+        .cases { background: #fafafa; }
         .case-item {
             display: flex;
             gap: 4rem;
@@ -175,7 +218,7 @@
             align-items: flex-start;
         }
         .case-info { flex: 1; }
-        .case-info h3 { font-size: 2rem; margin-bottom: 1.5rem; }
+        .case-info h3 { font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-color); }
         .case-flow {
             padding: 2rem;
             background: var(--bg-card);
@@ -193,16 +236,17 @@
         /* --- Footer --- */
         footer {
             padding: 6rem 10% 3rem;
-            background: #1a1a1a;
+            background: #1e293b;
             color: #fff;
             text-align: center;
         }
         footer p { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 2rem; opacity: 0.8; }
-        .footer-links a { margin: 0 1rem; color: #666; font-size: 0.9rem; }
+        .footer-links a { margin: 0 1rem; color: #94a3b8; font-size: 0.9rem; }
         .footer-links a:hover { color: var(--accent-color); }
 
         @media (max-width: 900px) {
             .hero { padding: 0 5%; }
+            .hero h1 { font-size: 2.8rem; }
             section { padding: 6rem 5%; }
             .project-grid { grid-template-columns: 1fr; }
             .project-card { grid-column: span 1 !important; }
@@ -215,7 +259,7 @@
 <section class="hero">
     <div class="hero-content">
         <p class="tagline">Experience × Intelligence</p>
-        <h1>10年外贸实战 × AI工程化落地</h1>
+        <h1><span class="highlight-10">10</span>年外贸实战 <span class="multiply">×</span> <span class="highlight-ai">AI</span>工程化落地</h1>
         <p class="subtitle">从自动化到智能化的全栈实践者 —— 不止懂概念，更会动手</p>
         <a href="#projects" class="cta">VIEW PROJECTS</a>
     </div>
