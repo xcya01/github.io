@@ -3,259 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI作品集 | 10年外贸实战 × AI工程化落地</title>
+    <title>AI 作品集 | 10 年外贸实战 × AI 工程化落地</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #1e293b; /* 打破纯黑，使用深空灰 */
-            --accent-color: #c5a059; /* 高级金/铜色点缀 */
-            --text-main: #2d3436;
-            --text-sub: #636e72;
-            --bg-light: #fcfcfc;
-            --bg-card: #ffffff;
-            --shadow-soft: 0 10px 30px rgba(0,0,0,0.05);
-            --shadow-deep: 0 20px 50px rgba(0,0,0,0.08);
-            --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
+        :root { --primary-color: #1e293b; --accent-color: #c5a059; --text-main: #2d3436; --text-sub: #636e72; --bg-light: #fcfcfc; --bg-card: #ffffff; --shadow-soft: 0 10px 30px rgba(0,0,0,0.05); --shadow-deep: 0 20px 50px rgba(0,0,0,0.08); --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background: var(--bg-light); 
-            color: var(--text-main); 
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
-
+        body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: var(--text-main); line-height: 1.8; overflow-x: hidden; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; }
         a { text-decoration: none; color: inherit; transition: var(--transition); }
-
-        /* --- Hero Section --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 0 10%;
-            background: linear-gradient(to right, #ffffff 50%, #f8f8f8 100%);
-            position: relative;
-        }
-        .hero::after {
-            content: "PORTFOLIO";
-            position: absolute;
-            right: -5%;
-            top: 20%;
-            font-size: 15vw;
-            font-weight: 900;
-            color: rgba(0,0,0,0.02);
-            z-index: 0;
-            user-select: none;
-        }
-        .hero-content { position: relative; z-index: 1; max-width: 850px; }
         
-        /* 标题基础样式 */
-        .hero h1 { 
-            font-size: clamp(2.5rem, 5.5vw, 4.2rem); 
-            line-height: 1.2; 
-            margin-bottom: 1.5rem; 
-            letter-spacing: -1px;
-            color: var(--primary-color);
-            text-shadow: 0 8px 20px rgba(0,0,0,0.04); /* 字体特效：立体空间感 */
-        }
-
-        /* 字体特效：流光渐变金 "10" */
-        .highlight-10 {
-            font-size: 1.25em; /* 重点放大 */
-            font-weight: 900;
-            background: linear-gradient(135deg, #c5a059 0%, #f3e5ab 50%, #c5a059 100%);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shine 4s linear infinite; /* 动态流光特效 */
-            display: inline-block;
-            filter: drop-shadow(0 4px 12px rgba(197, 160, 89, 0.3)); /* 外发光特效 */
-            transform: translateY(-2px);
-        }
-
-        /* 字体特效：科技蓝紫 "AI" */
-        .highlight-ai {
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-            font-family: 'Inter', sans-serif; /* AI用无衬线体显得更现代 */
-            letter-spacing: -2px;
-        }
-
-        /* 弱化乘号 */
-        .hero .multiply {
-            color: #cbd5e1;
-            font-weight: 300;
-            font-family: 'Inter', sans-serif;
-            margin: 0 0.1em;
-            font-size: 0.8em;
-        }
-
-        /* 流光动画关键帧 */
-        @keyframes shine {
-            to { background-position: 200% center; }
-        }
-
-        .hero .tagline {
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            margin-bottom: 2rem;
-            font-weight: 300;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-        .hero .subtitle {
-            font-size: 1.1rem;
-            color: var(--text-sub);
-            margin-bottom: 3rem;
-            border-left: 3px solid var(--accent-color);
-            padding-left: 1.5rem;
-        }
-        .hero .cta {
-            padding: 1.2rem 3rem;
-            background: var(--primary-color);
-            color: #fff;
-            font-weight: 600;
-            letter-spacing: 1px;
-            box-shadow: 0 15px 30px rgba(30, 41, 59, 0.2);
-        }
+        /* Hero */
+        .hero { min-height: 90vh; display: flex; align-items: center; justify-content: space-between; padding: 0 10%; background: linear-gradient(to right, #ffffff 50%, #f8f8f8 100%); position: relative; gap: 3rem; }
+        .hero::after { content: "PORTFOLIO"; position: absolute; right: -5%; top: 20%; font-size: 15vw; font-weight: 900; color: rgba(0,0,0,0.02); z-index: 0; user-select: none; }
+        .hero-content { position: relative; z-index: 1; max-width: 600px; flex: 1; }
+        .hero-image { flex: 1; max-width: 500px; position: relative; z-index: 1; }
+        .hero-image img { width: 100%; height: auto; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); transform: rotate(-2deg); transition: transform 0.5s ease; }
+        .hero-image img:hover { transform: rotate(0deg) scale(1.02); }
+        
+        .hero h1 { font-size: clamp(2.5rem, 5.5vw, 4.2rem); line-height: 1.2; margin-bottom: 1.5rem; letter-spacing: -1px; color: var(--primary-color); text-shadow: 0 8px 20px rgba(0,0,0,0.04); }
+        .highlight-10 { font-size: 1.25em; font-weight: 900; background: linear-gradient(135deg, #c5a059 0%, #f3e5ab 50%, #c5a059 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 4s linear infinite; display: inline-block; filter: drop-shadow(0 4px 12px rgba(197, 160, 89, 0.3)); transform: translateY(-2px); }
+        .highlight-ai { background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900; font-family: 'Inter', sans-serif; letter-spacing: -2px; }
+        .hero .multiply { color: #cbd5e1; font-weight: 300; font-family: 'Inter', sans-serif; margin: 0 0.1em; font-size: 0.8em; }
+        @keyframes shine { to { background-position: 200% center; } }
+        .hero .tagline { font-size: 1.5rem; color: var(--accent-color); margin-bottom: 2rem; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; }
+        .hero .subtitle { font-size: 1.1rem; color: var(--text-sub); margin-bottom: 3rem; border-left: 3px solid var(--accent-color); padding-left: 1.5rem; }
+        .hero .cta { padding: 1.2rem 3rem; background: var(--primary-color); color: #fff; font-weight: 600; letter-spacing: 1px; box-shadow: 0 15px 30px rgba(30, 41, 59, 0.2); display: inline-block; }
         .hero .cta:hover { transform: translateY(-5px); box-shadow: var(--shadow-deep); }
 
-        /* --- Section Common --- */
-        section { padding: 8rem 10%; }
-        h2 { 
-            font-size: 2.8rem; 
-            margin-bottom: 4rem; 
-            position: relative;
-            display: inline-block;
-            color: var(--primary-color);
-        }
-        h2::after {
-            content: "";
-            position: absolute;
-            bottom: -10px; left: 0;
-            width: 40px; height: 3px;
-            background: var(--accent-color);
-        }
+        section { padding: 6rem 10%; }
+        h2 { font-size: 2.5rem; margin-bottom: 3rem; position: relative; display: inline-block; color: var(--primary-color); }
+        h2::after { content: ""; position: absolute; bottom: -10px; left: 0; width: 40px; height: 3px; background: var(--accent-color); }
 
-        /* --- Skills Matrix --- */
-        .skill-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .skill-card {
-            background: var(--bg-card);
-            padding: 3rem 2rem;
-            border-radius: 4px;
-            box-shadow: var(--shadow-soft);
-            transition: var(--transition);
-            border: 1px solid rgba(0,0,0,0.02);
-        }
-        .skill-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-deep); border-color: rgba(197, 160, 89, 0.2); }
-        .skill-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-color); }
-        .skill-card p { font-size: 0.95rem; color: var(--text-sub); margin-bottom: 2rem; min-height: 3em; }
-        .skill-card .level {
-            height: 2px;
-            background: #f1f5f9;
-            position: relative;
-        }
-        .skill-card .level-bar {
-            position: absolute;
-            height: 100%;
-            background: var(--accent-color);
-            left: 0; top: 0;
-        }
+        /* Skills */
+        .skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .skill-card { background: var(--bg-card); padding: 2rem; border-radius: 4px; box-shadow: var(--shadow-soft); transition: var(--transition); border: 1px solid rgba(0,0,0,0.02); }
+        .skill-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-deep); border-color: rgba(197, 160, 89, 0.2); }
+        .skill-card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--primary-color); }
+        .skill-card p { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 1.5rem; min-height: 3em; }
+        .skill-card .level { height: 2px; background: #f1f5f9; position: relative; border-radius: 2px; }
+        .skill-card .level-bar { position: absolute; height: 100%; background: var(--accent-color); left: 0; top: 0; border-radius: 2px; }
 
-        /* --- Project Grid (Bento Style) --- */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 1.5rem;
-        }
-        .project-card {
-            grid-column: span 2;
-            background: var(--bg-card);
-            padding: 2.5rem;
-            box-shadow: var(--shadow-soft);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            border-bottom: 2px solid transparent;
-        }
-        .project-card:hover { border-bottom-color: var(--accent-color); transform: translateY(-5px); box-shadow: var(--shadow-deep); }
-        .project-card:nth-child(1), .project-card:nth-child(2) { grid-column: span 3; }
-        
-        .project-card .badge {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-        .project-card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--primary-color); }
-        .project-card p { font-size: 0.9rem; color: var(--text-sub); flex-grow: 1; margin-bottom: 2rem; }
+        /* Projects */
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .project-card { background: var(--bg-card); border-radius: 8px; box-shadow: var(--shadow-soft); transition: var(--transition); overflow: hidden; border: 1px solid rgba(0,0,0,0.02); }
+        .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-deep); border-color: rgba(197, 160, 89, 0.3); }
+        .project-card img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid #f1f5f9; }
+        .project-card .content { padding: 1.8rem; }
+        .project-card .badge { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); margin-bottom: 0.8rem; font-weight: 600; display: inline-block; background: rgba(197, 160, 89, 0.1); padding: 2px 8px; border-radius: 4px; }
+        .project-card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--primary-color); }
+        .project-card p { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 1.5rem; line-height: 1.6; }
         .project-card .tech { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .project-card .tech span {
-            font-size: 0.75rem;
-            background: #f8fafc;
-            padding: 4px 10px;
-            color: #64748b;
-            border-radius: 2px;
-        }
+        .project-card .tech span { font-size: 0.75rem; background: #f8fafc; padding: 4px 10px; color: #64748b; border-radius: 4px; border: 1px solid #e2e8f0; }
 
-        /* --- Case Studies --- */
+        /* Gallery */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+        .gallery-item { border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-soft); transition: var(--transition); position: relative; }
+        .gallery-item:hover { transform: scale(1.03); box-shadow: var(--shadow-deep); }
+        .gallery-item img { width: 100%; height: auto; display: block; }
+        .gallery-item .caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: white; padding: 2rem 1rem 0.5rem; font-size: 0.85rem; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+        .gallery-item:hover .caption { opacity: 1; }
+
+        /* Cases */
         .cases { background: #fafafa; }
-        .case-item {
-            display: flex;
-            gap: 4rem;
-            margin-bottom: 6rem;
-            align-items: flex-start;
-        }
-        .case-info { flex: 1; }
-        .case-info h3 { font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-color); }
-        .case-flow {
-            padding: 2rem;
-            background: var(--bg-card);
-            box-shadow: var(--shadow-soft);
-            border-radius: 4px;
-            margin: 2rem 0;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.85rem;
-            color: var(--accent-color);
-            letter-spacing: 1px;
-            line-height: 2;
-        }
-        .case-info p { color: var(--text-sub); }
+        .case-item { display: flex; gap: 3rem; margin-bottom: 4rem; align-items: flex-start; flex-wrap: wrap; }
+        .case-info { flex: 1; min-width: 300px; }
+        .case-info h3 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--primary-color); }
+        .case-flow { padding: 1.5rem; background: var(--bg-card); box-shadow: var(--shadow-soft); border-radius: 6px; margin: 1.5rem 0; font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--accent-color); letter-spacing: 0.5px; line-height: 1.8; border-left: 3px solid var(--accent-color); }
+        .case-info p { color: var(--text-sub); line-height: 1.7; }
 
-        /* --- Footer --- */
-        footer {
-            padding: 6rem 10% 3rem;
-            background: #1e293b;
-            color: #fff;
-            text-align: center;
-        }
-        footer p { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 2rem; opacity: 0.8; }
+        footer { padding: 4rem 10% 2rem; background: #1e293b; color: #fff; text-align: center; }
+        footer p { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 1.5rem; opacity: 0.9; }
         .footer-links a { margin: 0 1rem; color: #94a3b8; font-size: 0.9rem; }
         .footer-links a:hover { color: var(--accent-color); }
 
         @media (max-width: 900px) {
-            .hero { padding: 0 5%; }
-            .hero h1 { font-size: 2.8rem; }
-            section { padding: 6rem 5%; }
-            .project-grid { grid-template-columns: 1fr; }
-            .project-card { grid-column: span 1 !important; }
-            .case-item { flex-direction: column; gap: 2rem; }
+            .hero { flex-direction: column; padding: 4rem 5%; text-align: center; justify-content: center; }
+            .hero-content { max-width: 100%; }
+            .hero-image { max-width: 100%; margin-top: 2rem; }
+            .hero h1 { font-size: 2.5rem; }
+            section { padding: 4rem 5%; }
+            h2 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
+<!-- Hero -->
 <section class="hero">
     <div class="hero-content">
         <p class="tagline">Experience × Intelligence</p>
@@ -263,119 +96,127 @@
         <p class="subtitle">从自动化到智能化的全栈实践者 —— 不止懂概念，更会动手</p>
         <a href="#projects" class="cta">VIEW PROJECTS</a>
     </div>
+    <div class="hero-image">
+        <img src="assets/image_20260429_100022.png" alt="AI 文生图作品" />
+    </div>
 </section>
 
+<!-- Skills -->
 <section class="skills" id="skills">
     <h2>能力矩阵</h2>
     <div class="skill-grid">
-        <div class="skill-card">
-            <h3>AI助手系统架构</h3>
-            <p>OpenClaw全栈搭建：Telegram集成、技能编排、定时任务调度</p>
-            <div class="level"><div class="level-bar" style="width:90%"></div></div>
+        <div class="skill-card"><h3>🤖 AI 助手系统架构</h3><p>OpenClaw 全栈搭建：Telegram 集成、技能编排、定时任务调度</p><div class="level"><div class="level-bar" style="width:90%"></div></div></div>
+        <div class="skill-card"><h3>🔄 自动化工作流</h3><p>Cron 定时任务、多平台数据聚合、新闻推送、RSS 监控</p><div class="level"><div class="level-bar" style="width:85%"></div></div></div>
+        <div class="skill-card"><h3>🌐 多平台数据采集</h3><p>Agent Reach 多渠道接入、Crawl4AI 深度爬虫、反检测策略</p><div class="level"><div class="level-bar" style="width:80%"></div></div></div>
+        <div class="skill-card"><h3>🎨 AI 内容创作</h3><p>ModelScope 文生图 + 后处理、网文创作 SOP、提示词工程</p><div class="level"><div class="level-bar" style="width:85%"></div></div></div>
+        <div class="skill-card"><h3>🏗️ 全栈 Web 部署</h3><p>Vercel+MongoDB 影视站、GitHub Pages、API 集成</p><div class="level"><div class="level-bar" style="width:75%"></div></div></div>
+        <div class="skill-card"><h3>💼 外贸+AI 跨界</h3><p>10 年外贸实战经验，AI 赋能业务流程，客户背景调研自动化</p><div class="level"><div class="level-bar" style="width:95%"></div></div></div>
+    </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery" id="gallery">
+    <h2>AI 创作精选</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="assets/image_20260429_100022.png" alt="作品 1" />
+            <div class="caption">流光金·AI 艺术创作</div>
         </div>
-        <div class="skill-card">
-            <h3>自动化工作流</h3>
-            <p>Cron定时任务、多平台数据聚合、新闻推送、RSS监控</p>
-            <div class="level"><div class="level-bar" style="width:85%"></div></div>
+        <div class="gallery-item">
+            <img src="assets/image_20260429_000654.png" alt="作品 2" />
+            <div class="caption">赛博朋克风格</div>
         </div>
-        <div class="skill-card">
-            <h3>多平台数据采集</h3>
-            <p>Agent Reach多渠道接入、Crawl4AI深度爬虫、反检测策略</p>
-            <div class="level"><div class="level-bar" style="width:80%"></div></div>
+        <div class="gallery-item">
+            <img src="assets/image_20260429_111449.png" alt="作品 3" />
+            <div class="caption">自然光影模拟</div>
         </div>
-        <div class="skill-card">
-            <h3>AI内容创作</h3>
-            <p>ModelScope文生图+后处理、网文创作SOP、提示词工程</p>
-            <div class="level"><div class="level-bar" style="width:85%"></div></div>
-        </div>
-        <div class="skill-card">
-            <h3>全栈Web部署</h3>
-            <p>Vercel+MongoDB影视站、GitHub Pages、API集成</p>
-            <div class="level"><div class="level-bar" style="width:75%"></div></div>
-        </div>
-        <div class="skill-card">
-            <h3>外贸+AI跨界</h3>
-            <p>10年外贸实战经验，AI赋能业务流程，客户背景调研自动化</p>
-            <div class="level"><div class="level-bar" style="width:95%"></div></div>
+        <div class="gallery-item">
+            <img src="assets/image_20260429_112403.png" alt="作品 4" />
+            <div class="caption">微距细节展示</div>
         </div>
     </div>
 </section>
 
+<!-- Projects -->
 <section class="projects" id="projects">
     <h2>项目作品</h2>
     <div class="project-grid">
         <div class="project-card">
-            <span class="badge">核心项目</span>
-            <h3>AI智能助手系统</h3>
-            <p>基于OpenClaw搭建的完整AI助手：Telegram Bot集成、15+技能编排、定时新闻推送、多模型调度。日常高频使用，已稳定运行数月。</p>
-            <div class="tech">
-                <span>OpenClaw</span><span>Telegram Bot</span><span>Cron</span><span>Multi-LLM</span>
+            <img src="assets/openclaw 聊天截图.png" alt="OpenClaw 界面" onerror="this.style.display='none'">
+            <div class="content">
+                <span class="badge">核心项目</span>
+                <h3>AI 智能助手系统</h3>
+                <p>基于 OpenClaw 搭建的完整 AI 助手：Telegram Bot 集成、15+ 技能编排、定时新闻推送、多模型调度。日常高频使用，已稳定运行数月。</p>
+                <div class="tech"><span>OpenClaw</span><span>Telegram Bot</span><span>Cron</span><span>Multi-LLM</span></div>
             </div>
         </div>
         <div class="project-card">
-            <span class="badge">实战项目</span>
-            <h3>影视聚合站</h3>
-            <p>全栈部署：Vercel前端 + MongoDB数据库，支持在线播放、搜索、分类浏览。从零搭建到上线独立完成。</p>
-            <div class="tech">
-                <span>Vercel</span><span>MongoDB</span><span>Next.js</span><span>API集成</span>
+            <img src="assets/Moviesite homepage.png" alt="影视站首页" onerror="this.style.display='none'">
+            <div class="content">
+                <span class="badge">实战项目</span>
+                <h3>影视聚合站</h3>
+                <p>全栈部署：Vercel 前端 + MongoDB 数据库，支持在线播放、搜索、分类浏览。从零搭建到上线独立完成。</p>
+                <div class="tech"><span>Vercel</span><span>MongoDB</span><span>Next.js</span><span>API 集成</span></div>
             </div>
         </div>
         <div class="project-card">
-            <span class="badge">AI应用</span>
-            <h3>奇门遁甲智能排盘</h3>
-            <p>将传统术数数字化：自动起局排盘、财官/婚恋/性格多维度分析、化解方案生成。Windows/Linux跨平台适配。</p>
-            <div class="tech">
-                <span>Bash</span><span>Python</span><span>置闰法</span><span>转盘</span>
+            <img src="assets/qimendunjia.png" alt="奇门排盘" onerror="this.style.display='none'">
+            <div class="content">
+                <span class="badge">AI 应用</span>
+                <h3>奇门遁甲智能排盘</h3>
+                <p>将传统术数数字化：自动起局排盘、财官/婚恋/性格多维度分析、化解方案生成。Windows/Linux 跨平台适配。</p>
+                <div class="tech"><span>Bash</span><span>Python</span><span>置闰法</span><span>转盘</span></div>
             </div>
         </div>
         <div class="project-card">
-            <span class="badge">自动化</span>
-            <h3>每日新闻自动推送</h3>
-            <p>定时抓取多源新闻→AI摘要→Telegram推送。自动监控、故障自愈、超时动态调整。</p>
-            <div class="tech">
-                <span>Cron</span><span>Web Scraping</span><span>LLM摘要</span>
+            <div class="content">
+                <span class="badge">自动化</span>
+                <h3>每日新闻自动推送</h3>
+                <p>定时抓取多源新闻→AI 摘要→Telegram 推送。自动监控、故障自愈、超时动态调整。</p>
+                <div class="tech"><span>Cron</span><span>Web Scraping</span><span>LLM 摘要</span></div>
             </div>
         </div>
         <div class="project-card">
-            <span class="badge">内容创作</span>
-            <h3>AI文生图工作流</h3>
-            <p>ModelScope双模型对比生成+自动后处理去AI感：降对比、降饱和、胶片颗粒、微柔化。真实感增强流程：实体搜索→特征提取→优化prompt→生成。</p>
-            <div class="tech">
-                <span>ModelScope</span><span>Exa搜索</span><span>Pillow</span><span>Prompt工程</span>
+            <div class="content">
+                <span class="badge">内容创作</span>
+                <h3>AI 文生图工作流</h3>
+                <p>ModelScope 双模型对比生成 + 自动后处理去 AI 感：降对比、降饱和、胶片颗粒、微柔化。真实感增强流程。</p>
+                <div class="tech"><span>ModelScope</span><span>Exa 搜索</span><span>Pillow</span><span>Prompt 工程</span></div>
             </div>
         </div>
         <div class="project-card">
-            <span class="badge">数据采集</span>
-            <h3>多平台数据聚合</h3>
-            <p>Agent Reach统一接入Twitter/Reddit/小红书/B站/微博等16个平台，零配置启动，Cookie认证解锁高级功能。</p>
-            <div class="tech">
-                <span>Agent Reach</span><span>mcporter</span><span>yt-dlp</span><span>MCP</span>
+            <div class="content">
+                <span class="badge">数据采集</span>
+                <h3>多平台数据聚合</h3>
+                <p>Agent Reach 统一接入 Twitter/Reddit/小红书/B 站/微博等 16 个平台，零配置启动，Cookie 认证解锁高级功能。</p>
+                <div class="tech"><span>Agent Reach</span><span>mcporter</span><span>yt-dlp</span><span>MCP</span></div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- Cases -->
 <section class="cases" id="cases">
     <h2>实战案例</h2>
     <div class="case-item">
         <div class="case-info">
-            <h3>AI赋能外贸客户背景调研</h3>
-            <div class="case-flow">目标公司 → Crawl4AI深度爬取 → 多平台数据聚合 → AI摘要分析 → 结构化报告</div>
-            <p>传统外贸做客户背调需要2-3小时人工搜索，用AI工具链自动化后缩短至15分钟，覆盖LinkedIn、新闻、社交媒体等多维度信息。</p>
+            <h3>🔍 AI 赋能外贸客户背景调研</h3>
+            <div class="case-flow">目标公司 → Crawl4AI 深度爬取 → 多平台数据聚合 → AI 摘要分析 → 结构化报告</div>
+            <p>传统外贸做客户背调需要 2-3 小时人工搜索，用 AI 工具链自动化后缩短至 15 分钟，覆盖 LinkedIn、新闻、社交媒体等多维度信息。</p>
         </div>
     </div>
     <div class="case-item">
         <div class="case-info">
-            <h3>AI辅助网文创作全流程</h3>
+            <h3>✍️ AI 辅助网文创作全流程</h3>
             <div class="case-flow">素材收集 → 大纲生成 → 逐章创作 → 审核/校对 → 成品输出</div>
-            <p>建立标准化SOP：提示词模板库+AI批量生成+人工审核校准。单章产出效率提升3倍，同时保持人设一致和伏笔呼应。</p>
+            <p>建立标准化 SOP：提示词模板库+AI 批量生成 + 人工审核校准。单章产出效率提升 3 倍，同时保持人设一致和伏笔呼应。</p>
         </div>
     </div>
     <div class="case-item">
         <div class="case-info">
-            <h3>智能家居+风水化解实践</h3>
+            <h3>🏠 智能家居 + 风水化解实践</h3>
             <div class="case-flow">奇门起局 → 宫位分析 → 化气阵方案 → 物品布局调整</div>
-            <p>将AI排盘结果落地到实际空间：猫食盆位置（巽宫虎形物）、水盆（辰龙位）、绿萝（乙合庚），理论与生活场景无缝对接。</p>
+            <p>将 AI 排盘结果落地到实际空间：猫食盆位置（巽宫虎形物）、水盆（辰龙位）、绿萝（乙合庚），理论与生活场景无缝对接。</p>
         </div>
     </div>
 </section>
