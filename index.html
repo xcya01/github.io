@@ -23,7 +23,7 @@
         a { text-decoration: none; color: inherit; transition: var(--transition); }
 
         /* Hero */
-        .hero { min-height: 90vh; display: flex; align-items: center; justify-content: space-between; padding: 5rem 10% 0 10%; background: linear-gradient(to right, #ffffff 50%, #f8f8f8 100%); position: relative; gap: 3rem; }
+        .hero { min-height: 90vh; display: flex; align-items: center; justify-content: space-between; padding: 0 10%; background: linear-gradient(to right, #ffffff 50%, #f8f8f8 100%); position: relative; gap: 3rem; }
         .hero::after { content: "PORTFOLIO"; position: absolute; right: -5%; top: 20%; font-size: 15vw; font-weight: 900; color: rgba(0,0,0,0.02); z-index: 0; user-select: none; }
         .hero-content { position: relative; z-index: 1; max-width: 600px; flex: 1; }
         .hero-image { flex: 1; max-width: 500px; position: relative; z-index: 1; }
@@ -48,9 +48,7 @@
         .skill-card { background: var(--bg-card); padding: 2rem; border-radius: 4px; box-shadow: var(--shadow-soft); transition: var(--transition); border: 1px solid rgba(0,0,0,0.02); }
         .skill-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-deep); border-color: rgba(197, 160, 89, 0.2); }
         .skill-card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--primary-color); }
-        .skill-card p { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 1.5rem; min-height: 3em; }
-        .skill-card .level { height: 2px; background: #f1f5f9; position: relative; border-radius: 2px; }
-        .skill-card .level-bar { position: absolute; height: 100%; background: var(--accent-color); left: 0; top: 0; border-radius: 2px; }
+        .skill-card p { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 0; }
 
         /* Gallery */
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
@@ -161,43 +159,19 @@
             h2 { font-size: 2rem; }
             .modal-content { width: 95%; }
         }
-        .demo-link { display: inline-block; margin-top: 10px; color: #c5a059; font-weight: 600; font-size: 0.9rem; }
-        .demo-link:hover { color: #1e293b; }
-        .name-tag { font-size: 0.95rem; color: var(--accent-color); margin-bottom: 0.5rem; letter-spacing: 1px; font-weight: 600; opacity: 0.85; }
-        .top-nav { position: fixed; top: 0; left: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid rgba(197,160,89,0.15); }
-        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: center; align-items: center; }
-        .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--primary-color); }
-        .nav-links { display: flex; gap: 2rem; }
-        .nav-links a { color: var(--primary-color); font-size: 1.15rem; font-weight: 600; letter-spacing: 0.5px; }
-        .nav-links a:hover { color: var(--accent-color); }
-        .nav-logo-link { display: inline-block; }
-        .nav-logo-img { height: 28px; width: auto; }
-        .hero-logo { width: 320px; height: auto; margin-bottom: 1.5rem; }
     </style>
 </head>
 <body>
-        <!-- Navigation -->
-    <nav class="top-nav">
-        <div class="nav-inner">
-                <div class="nav-links">
-                <a href="#skills">能力矩阵</a>
-                <a href="#projects">项目作品</a>
-                <a href="#cases">实战案例</a>
-            </div>
-        </div>
-    </nav>
     <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
-            <img src="assets/yang-logo.svg" alt="Yang" class="hero-logo" />
-            <p class="name-tag"> AI 产品经理 / AI 运营（外贸类）</p>
             <p class="tagline">Experience × Intelligence</p>
             <h1><span class="highlight-10">10</span>年外贸实战 <span class="multiply">×</span> <span class="highlight-ai">AI</span>工程化落地</h1>
             <p class="subtitle">从自动化到智能化的全栈实践者 —— 不止懂概念，更会动手</p>
             <a href="#projects" class="cta">VIEW PROJECTS</a>
         </div>
         <div class="hero-image">
-            <img src="assets/hero-bg.png" style="display: block;" />
+            <img src="assets/image_20260429_100022.png" style="display: block;" />
         </div>
     </section>
 
@@ -205,23 +179,24 @@
     <section class="skills" id="skills">
         <h2>能力矩阵</h2>
         <div class="skill-grid">
-            <div class="skill-card"><h3>🤖 AI 助手系统架构</h3><p>OpenClaw 全栈搭建：Telegram 集成、技能编排、定时任务调度</p><div class="level"><div class="level-bar" style="width:90%"></div></div></div>
-            <div class="skill-card"><h3>🔄 自动化工作流</h3><p>Cron 定时任务、多平台数据聚合、新闻推送、RSS 监控</p><div class="level"><div class="level-bar" style="width:85%"></div></div></div>
-            <div class="skill-card"><h3>🌐 多平台数据采集</h3><p>Agent Reach 多渠道接入、Crawl4AI 深度爬虫、反检测策略</p><div class="level"><div class="level-bar" style="width:80%"></div></div></div>
-            <div class="skill-card"><h3>🎨 AI 内容创作</h3><p>ModelScope 文生图 + 后处理、网文创作 SOP、提示词工程</p><div class="level"><div class="level-bar" style="width:85%"></div></div></div>
-            <div class="skill-card"><h3>🏗️ 全栈 Web 部署</h3><p>Vercel+MongoDB 影视站、GitHub Pages、API 集成</p><div class="level"><div class="level-bar" style="width:75%"></div></div></div>
-            <div class="skill-card"><h3>💼 外贸+AI 跨界</h3><p>10 年外贸实战经验，AI 赋能业务流程，客户背景调研自动化</p><div class="level"><div class="level-bar" style="width:95%"></div></div></div>
+            <div class="skill-card"><h3>🤖 AI 助手系统架构</h3><p>OpenClaw 全栈搭建：Telegram 集成、15+ 技能编排、定时任务调度</p></div>
+            <div class="skill-card"><h3>🔄 自动化工作流</h3><p>Cron 定时任务、多平台数据聚合、新闻推送、RSS 监控</p></div>
+            <div class="skill-card"><h3>🌐 多平台数据采集</h3><p>Agent Reach 多渠道接入、Crawl4AI 深度爬虫、反检测策略</p></div>
+            <div class="skill-card"><h3>🎨 AI 内容创作</h3><p>ModelScope 文生图 + 后处理、网文创作 SOP、提示词工程</p></div>
+            <div class="skill-card"><h3>🏗️ 全栈 Web 部署</h3><p>Vercel+MongoDB 影视站、GitHub Pages、API 集成</p></div>
+            <div class="skill-card"><h3>💼 外贸+AI 跨界</h3><p>10 年外贸实战经验，AI 赋能业务流程，客户背景调研自动化</p></div>
         </div>
     </section>
 
     <!-- Gallery -->
     <section class="gallery" id="gallery">
-        <h2>AI 创作精选</h2>
+        <h2>AI 文生图工作流 — 产出案例</h2>
+        <p style="color: var(--text-sub); margin-bottom: 2rem; font-size: 1rem; max-width: 600px;">ModelScope 双模型生成 → Exa 搜索真实视觉特征 → 优化 Prompt → 自动后处理（降对比/降饱和/胶片颗粒/微柔化），去 AI 感、增强真实感。</p>
         <div class="gallery-grid">
-            <div class="gallery-item" onclick="openModal('assets/image_20260429_100022.png', '流光金·AI 艺术创作')"><img src="assets/image_20260429_100022.png" style="display: block;" /><div class="caption">流光金·AI 艺术创作</div></div>
-            <div class="gallery-item" onclick="openModal('assets/image_20260429_000654.png', '赛博朋克风格')"><img src="assets/image_20260429_000654.png" style="display: block;" /><div class="caption">赛博朋克风格</div></div>
-            <div class="gallery-item" onclick="openModal('assets/image_20260429_111449.png', '自然光影模拟')"><img src="assets/image_20260429_111449.png" style="display: block;" /><div class="caption">自然光影模拟</div></div>
-            <div class="gallery-item" onclick="openModal('assets/image_20260429_112403.png', '微距细节展示')"><img src="assets/image_20260429_112403.png" style="display: block;" /><div class="caption">微距细节展示</div></div>
+            <div class="gallery-item" onclick="openModal('assets/image_20260429_100022.png', '流光金·AI 艺术创作 — ModelScope 生成 + 后处理去 AI 感')"><img src="assets/image_20260429_100022.png" style="display: block;" /><div class="caption">流光金·AI 艺术创作</div></div>
+            <div class="gallery-item" onclick="openModal('assets/image_20260429_000654.png', '赛博朋克风格 — 双模型对比（Qwen vs Turbo）生成')"><img src="assets/image_20260429_000654.png" style="display: block;" /><div class="caption">赛博朋克风格</div></div>
+            <div class="gallery-item" onclick="openModal('assets/image_20260429_111449.png', '自然光影模拟 — 胶片颗粒 + 微柔化后处理效果')"><img src="assets/image_20260429_111449.png" style="display: block;" /><div class="caption">自然光影模拟</div></div>
+            <div class="gallery-item" onclick="openModal('assets/image_20260429_112403.png', '微距细节展示 — 降对比 + 降饱和真实感增强')"><img src="assets/image_20260429_112403.png" style="display: block;" /><div class="caption">微距细节展示</div></div>
         </div>
     </section>
 
@@ -254,7 +229,6 @@
                     <h3>奇门遁甲智能排盘</h3>
                     <p>将传统术数数字化：自动起局排盘、财官/婚恋/性格多维度分析、化解方案生成。Windows/Linux 跨平台适配。</p>
                     <div class="tech"><span>Bash</span><span>Python</span><span>置闰法</span><span>转盘</span></div>
-                    <a href="https://qimen-demo.vercel.app/" target="_blank" class="demo-link">🔗 在线体验 →</a>
                 </div>
             </div>
             <div class="project-card">
@@ -317,7 +291,7 @@
         <p>不止会概念，更会动手</p>
         <div class="footer-links">
             <a href="https://github.com/xcya01" target="_blank">GitHub</a>
-            <a href="mailto:xcya01@gmail.com">Contact</a>
+            <a href="mailto:contact@example.com">Contact</a>
         </div>
     </footer>
 
