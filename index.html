@@ -164,9 +164,26 @@
         .demo-link { display: inline-block; margin-top: 10px; color: #c5a059; font-weight: 600; font-size: 0.9rem; }
         .demo-link:hover { color: #1e293b; }
         .name-tag { font-size: 0.95rem; color: var(--accent-color); margin-bottom: 0.5rem; letter-spacing: 1px; font-weight: 600; opacity: 0.85; }
+        .top-nav { position: fixed; top: 0; left: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid rgba(197,160,89,0.15); }
+        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0.8rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--primary-color); }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: var(--text-sub); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.5px; }
+        .nav-links a:hover { color: var(--accent-color); }
     </style>
 </head>
 <body>
+        <!-- Navigation -->
+    <nav class="top-nav">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo">Yang</a>
+            <div class="nav-links">
+                <a href="#skills">能力矩阵</a>
+                <a href="#projects">项目作品</a>
+                <a href="#cases">实战案例</a>
+            </div>
+        </div>
+    </nav>
     <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
